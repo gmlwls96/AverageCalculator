@@ -1,0 +1,62 @@
+package com.hj.average.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+object Colors {
+    val Primary = Color(0xFF0AB996)
+
+    val PurpleGrey80 = Color(0xFFCCC2DC)
+    val Pink80 = Color(0xFFEFB8C8)
+
+    val Purple000 = Color(0xFFE9EBFF)
+    val Purple40 = Color(0xFF6650a4)
+    val PurpleGrey40 = Color(0xFF625b71)
+    val Pink40 = Color(0xFF7D5260)
+
+    val Black = Color(0xFF000000)
+    val Black_45 = Color(0x73000000)
+    val DarkGray = Color(0xFF444444)
+    val Gray = Color(0xFF888888)
+    val LightGray = Color(0xFFCCCCCC)
+    val White = Color(0xFFFFFFFF)
+    val White_45 = Color(0x73FFFFFF)
+    val Red = Color(0xFFFF0000)
+    val Green = Color(0xFF00FF00)
+    val Green000 = Color(0xFFE9FFF4)
+    val Green100 = Color(0xFF099563)
+    val Yellow = Color(0xFFFFFF00)
+    val Cyan = Color(0xFF00FFFF)
+    val Magenta = Color(0xFFFF00FF)
+    val Transparent = Color(0x00000000)
+
+    val Gray1000 = Color(0xFF212529)
+    val Gray1000_25 = Color(0x19212529)
+    val Gray900 = Color(0xFF343A40)
+    val Gray800 = Color(0xFF495057)
+    val Gray700 = Color(0xFF868E96)
+    val Gray600 = Color(0xFFADB5BD)
+    val Gray500 = Color(0xFFCED4DA)
+    val Gray400 = Color(0xFFDEE2E6)
+    val Gray300 = Color(0xFFE9ECEF)
+    val Gray200 = Color(0xFFF1F3F5)
+    val Gray100 = Color(0xFFF8F9FA)
+
+    val LightBlue = Color(0xFF00E7FF)
+    val SkyBlue100 = Color(0xFF00E7FF)
+    val SkyBlue100_25 = Color(0x1900E7FF)
+    val Blue000 = Color(0xFFEAF5FF)
+    val Blue100 = Color(0xFF2588EB)
+    val Blue200 = Color(0xFF02A1FF)
+    val Blue300 = Color(0xFF127CDE)
+    val Blue400 = Color(0xFF001EFF)
+    val Blue2 = Color(0xFF4080F7)
+    val Blue3 = Color(0xFF0C55DC)
+    val Blue4 = Color(0xFF04139C)
+    val FintaBlue = Color(0xFF001EFF)
+    val Finta100 = Color(0xFFECEEFF)
+    val F5F7FF = Color(0xFFF5F7FF)
+    val FAFAFAFA = Color(0xFFFAFAFA)
+    val FFFFF3F3 = Color(0xFFFFF3F3)
+    val RED000 = Color(0xFFFFF2F2)
+    val RED200 = Color(0xFFF86363)
+}

@@ -6,9 +6,11 @@ plugins {
 }
 
 android{
-    namespace = "com.hj.average.ui.component"
+    namespace = "com.hj.average.ui.route"
 }
+
 configureCoreAndroidNavigator()
+
 dependencies {
     implementation(projects.core.res)
     implementation(projects.ui.theme)

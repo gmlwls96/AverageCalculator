@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="confirm" translatable="false">확인</string>
+    <string name="double_two_format">%.2f</string>
+    <string name="double_percent_format">%.2f %%</string>
+    <string name="total_purchase_price">총 매수 가격</string>
+    <string name="list_screen_title">평단가 계산기</string>
 </resources>

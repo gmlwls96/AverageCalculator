@@ -42,8 +42,10 @@ include(
 
     ":feature:common",
     ":feature:main",
+    ":feature:itemlist",
 
     ":ui:components",
+    ":ui:route",
     ":ui:theme",
 )
  

@@ -5,7 +5,7 @@ plugins {
 
 
 android {
-    namespace = "com.hj.average.feature.main"
+    namespace = "com.hj.average.feature.item.list"
 }
 
 dependencies {
@@ -15,7 +15,5 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.kotlinx.immutable)
-    implementation(projects.ui.route)
-    implementation(projects.feature.itemlist)
-
+    implementation(project(":ui:route"))
 }

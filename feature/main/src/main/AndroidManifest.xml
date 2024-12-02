@@ -6,7 +6,7 @@
             android:name="com.hj.average.feature.main.MainActivity"
             android:configChanges="uiMode"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/Theme.Template">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

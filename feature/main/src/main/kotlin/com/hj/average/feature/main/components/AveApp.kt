@@ -9,16 +9,21 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.hj.average.feature.item.list.nav.itemListScreen
 import com.hj.average.ui.component.appstate.AveAppState
+import com.hj.average.ui.component.bottombar.BottomNavigationBar
+import com.hj.average.ui.component.bottombar.model.NavigationItem
 import com.hj.average.ui.route.ListRoute
 import hw.dp.route.generated.RouteExtension.Companion.route
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun AveApp(
     aveAppState: AveAppState,
+    bottomList: ImmutableList<NavigationItem>,
     onChangeTheme: (String) -> Unit
 ) {
     AveNavHost(
-        aveAppState,
+        aveAppState = aveAppState,
+        bottomList = bottomList,
         onChangeTheme = onChangeTheme
     )
 }
@@ -27,10 +32,19 @@ fun AveApp(
 @Composable
 fun AveNavHost(
     aveAppState: AveAppState,
+    bottomList: ImmutableList<NavigationItem>,
     onChangeTheme: (String) -> Unit
 ) {
     val navController = aveAppState.navController
-    Scaffold {
+    Scaffold(
+        bottomBar = {
+            BottomNavigationBar(
+                navController = navController,
+                screenList = bottomList,
+                onClickBottomTab = {}
+            )
+        }
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()

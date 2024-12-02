@@ -9,16 +9,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.hj.average.feature.main.components.AveApp
 import com.hj.average.ui.component.appstate.rememberAveAppState
+import com.hj.average.ui.component.bottombar.model.NavigationItem
 import com.hj.average.ui.theme.AveTheme
 import dagger.hilt.android.AndroidEntryPoint
 import hw.dp.core.ui.navigator.api.NavigatorApi
 import javax.inject.Inject
+import kotlinx.collections.immutable.ImmutableList
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var navigatorApi: NavigatorApi
+
+    @Inject
+    lateinit var bottomList: ImmutableList<NavigationItem>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             AveTheme(isDarkTheme = isDarkTheme) {
                 AveApp(
                     aveAppState = aveAppState,
+                    bottomList = bottomList,
                     onChangeTheme = {}
                 )
             }

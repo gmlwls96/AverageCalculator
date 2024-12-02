@@ -14,4 +14,5 @@ dependencies {
     implementation(projects.ui.theme)
     implementation(libs.androidx.compose.navigation)
     implementation(libs.androidx.compose.material)
+    implementation(libs.kotlinx.immutable)
 }

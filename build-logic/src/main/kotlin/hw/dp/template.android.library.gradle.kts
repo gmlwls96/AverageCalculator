@@ -7,6 +7,7 @@ plugins {
     id("com.android.library")
     id("template.verify.detekt")
     id("template.kover")
+    id("template.tasks")
 }
 
 android {

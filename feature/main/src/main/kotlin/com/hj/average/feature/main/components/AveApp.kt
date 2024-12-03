@@ -7,7 +7,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.hj.average.core.models.ThemeType
 import com.hj.average.feature.item.list.nav.itemListScreen
+import com.hj.average.feature.setting.nav.settingScreen
+import com.hj.average.feature.setting.nav.settingThemeScreen
 import com.hj.average.ui.component.appstate.AveAppState
 import com.hj.average.ui.component.bottombar.BottomNavigationBar
 import com.hj.average.ui.component.bottombar.model.NavigationItem
@@ -18,22 +21,24 @@ import kotlinx.collections.immutable.ImmutableList
 @Composable
 fun AveApp(
     aveAppState: AveAppState,
+    currentTheme: ThemeType,
     bottomList: ImmutableList<NavigationItem>,
-    onChangeTheme: (String) -> Unit
+    onChangeTheme: (ThemeType) -> Unit
 ) {
     AveNavHost(
         aveAppState = aveAppState,
         bottomList = bottomList,
+        currentTheme = currentTheme,
         onChangeTheme = onChangeTheme
     )
 }
 
-@Suppress("UnusedParameter")
 @Composable
 fun AveNavHost(
     aveAppState: AveAppState,
     bottomList: ImmutableList<NavigationItem>,
-    onChangeTheme: (String) -> Unit
+    currentTheme: ThemeType,
+    onChangeTheme: (ThemeType) -> Unit
 ) {
     val navController = aveAppState.navController
     Scaffold(
@@ -55,6 +60,14 @@ fun AveNavHost(
                 startDestination = ListRoute.route
             ) {
                 itemListScreen()
+
+                settingScreen()
+
+                settingThemeScreen(
+                    currentTheme = currentTheme,
+                    onBack = { aveAppState.navigatorApi.popBackStack() },
+                    onChangeTheme = onChangeTheme
+                )
             }
         }
     }

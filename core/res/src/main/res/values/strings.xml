@@ -18,4 +18,16 @@
     <string name="setting_theme_dark">다크</string>
     <string name="setting_theme_light">라이트</string>
     <string name="setting_theme_system">시스템</string>
+
+    <string name="first_buy">첫 번째 구매</string>
+    <string name="second_buy">두 번째 구매</string>
+    <string name="input_name_hint">이름</string>
+    <string name="input_first_price_hint">보유 매수 가격</string>
+    <string name="input_first_quantity_hint">보유 수량</string>
+    <string name="input_second_price_hint">추가 매수 가격</string>
+    <string name="input_second_quantity_hint">추가 매수 수량</string>
+    <string name="total_quantity">총 수량</string>
+    <string name="total_profit">수익률</string>
+    <string name="total_buy_price">총 매수 가격</string>
+    <string name="total_average_price">평단가</string>
 </resources>

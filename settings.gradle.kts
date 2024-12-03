@@ -43,6 +43,7 @@ include(
     ":feature:common",
     ":feature:main",
     ":feature:itemlist",
+    ":feature:setting",
 
     ":ui:components",
     ":ui:route",

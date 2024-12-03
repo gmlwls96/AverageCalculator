@@ -2,7 +2,9 @@ package com.hj.average.feature.item.list.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -28,6 +30,7 @@ internal fun ListHeader(
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .height(AppTheme.dimensions.height106)
             .padding(AppTheme.dimensions.padding20)
     ) {
         Icon(
@@ -39,7 +42,7 @@ internal fun ListHeader(
             painter = rememberVectorPainter(image = Icons.TwoTone.AddCircle),
             contentDescription = null
         )
-
+        Spacer(modifier = Modifier.weight(1f))
         Text(
             text = stringResource(id = R.string.list_screen_title),
             style = AppTheme.typography.noto32,

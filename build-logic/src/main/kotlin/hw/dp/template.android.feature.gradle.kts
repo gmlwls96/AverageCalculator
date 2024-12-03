@@ -30,6 +30,7 @@ dependencies {
     implementation(project(":core:res"))
     implementation(project(":ui:components"))
     implementation(project(":ui:theme"))
+    implementation(project(":ui:route"))
     val libs = project.extensions.libs
 
     implementation(libs.findLibrary("androidx.appcompat").get())

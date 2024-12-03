@@ -8,4 +8,14 @@
     <string name="double_percent_format">%.2f %%</string>
     <string name="total_purchase_price">총 매수 가격</string>
     <string name="list_screen_title">평단가 계산기</string>
+
+    <string name="setting_screen_title">설정</string>
+    <string name="setting_theme">테마</string>
+    <string name="setting_bug">버그 신고 및 개선 요청</string>
+
+    <string name="setting_theme_title">테마 설정</string>
+    <string name="setting_theme_current">현재 테마 : %s</string>
+    <string name="setting_theme_dark">다크</string>
+    <string name="setting_theme_light">라이트</string>
+    <string name="setting_theme_system">시스템</string>
 </resources>

@@ -30,4 +30,7 @@
     <string name="total_profit">수익률</string>
     <string name="total_buy_price">총 매수 가격</string>
     <string name="total_average_price">평단가</string>
+
+    <string name="detail_screen_back_text">평단가 계산기</string>
+    <string name="detail_screen_add">추가 매수</string>
 </resources>

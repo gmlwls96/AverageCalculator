@@ -45,6 +45,7 @@ object Colors {
     val SkyBlue100 = Color(0xFF00E7FF)
     val SkyBlue100_25 = Color(0x1900E7FF)
     val Blue000 = Color(0xFFEAF5FF)
+    val Blue100_45 = Color(0x732588EB)
     val Blue100 = Color(0xFF2588EB)
     val Blue200 = Color(0xFF02A1FF)
     val Blue300 = Color(0xFF127CDE)

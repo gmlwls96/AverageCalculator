@@ -45,6 +45,7 @@ include(
     ":feature:itemlist",
     ":feature:setting",
     ":feature:detail",
+    ":feature:add",
 
     ":ui:components",
     ":ui:route",

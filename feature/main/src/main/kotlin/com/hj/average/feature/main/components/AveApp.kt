@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import com.hj.average.core.models.ThemeType
+import com.hj.average.feature.item.add.nav.addScreen
 import com.hj.average.feature.item.detail.nav.detailScreen
 import com.hj.average.feature.item.list.nav.itemListScreen
 import com.hj.average.feature.setting.nav.settingScreen
@@ -71,6 +72,8 @@ fun AveNavHost(
                 )
 
                 detailScreen()
+
+                addScreen()
             }
         }
     }

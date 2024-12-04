@@ -33,4 +33,7 @@
 
     <string name="detail_screen_back_text">평단가 계산기</string>
     <string name="detail_screen_add">추가 매수</string>
+
+    <string name="item_add_title">아이템 추가 화면</string>
+    <string name="item_add_save">저장</string>
 </resources>

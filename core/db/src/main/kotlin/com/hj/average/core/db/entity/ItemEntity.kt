@@ -18,7 +18,7 @@ data class ItemEntity(
     val secondValuePrice = secondPrice * secondQuantity
     val totalPrice = firstValuePrice + secondValuePrice
     val totalQuantity = firstQuantity + secondQuantity
-    val totalPurchasePrice: Double = firstValuePrice + firstValuePrice
+    val totalPurchasePrice: Double = firstValuePrice + secondValuePrice
     val currentPriceValue = secondPrice * totalQuantity
     val averagePrice: Double = totalPrice / totalQuantity
     val profit: Double = ((currentPriceValue - totalPrice) / totalPrice) * 100.0

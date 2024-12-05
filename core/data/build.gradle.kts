@@ -11,6 +11,7 @@ dependencies {
     implementation(projects.core.domain)
     implementation(projects.core.models)
     implementation(projects.core.datastore)
+    implementation(projects.core.db)
 
     implementation(libs.retrofit.core)
     implementation(libs.gson)

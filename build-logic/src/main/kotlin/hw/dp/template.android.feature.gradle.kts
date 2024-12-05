@@ -25,6 +25,7 @@ configureHiltAndroid()
 configureCoreAndroidNavigator()
 
 dependencies {
+    implementation(project(":core:data"))
     implementation(project(":core:domain"))
     implementation(project(":core:models"))
     implementation(project(":core:res"))

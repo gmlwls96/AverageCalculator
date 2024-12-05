@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 interface ItemDao : BaseDao<ItemEntity> {
 
     @Query("SELECT * FROM itementity WHERE id = :id")
-    fun getItemEntity(id: String): Flow<ItemEntity>
+    fun getItemEntityOrNull(id: Int): Flow<ItemEntity?>
 
     @Query("SELECT * FROM itementity ORDER BY date")
     fun getItemList(): Flow<List<ItemEntity>>

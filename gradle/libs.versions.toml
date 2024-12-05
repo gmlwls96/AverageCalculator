@@ -51,6 +51,8 @@ kover = "0.7.5"
 coreNavigatorApi = "1.0.1"
 coreNavigatorAnnotation = "1.0.3"
 
+room = "2.6.1"
+
 [libraries]
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
@@ -137,6 +139,11 @@ core-ktx = { group = "androidx.test", name = "core-ktx", version = "1.5.0" }
 # Core-Android
 core-android-navigator-api = {group = "hw.dp.core", name = "navigator-api", version.ref="coreNavigatorApi"}
 core-android-navigator-annotation = {group = "hw.dp.core", name = "navigator-annotation", version.ref="coreNavigatorAnnotation"}
+
+# room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 
 [bundles]
 

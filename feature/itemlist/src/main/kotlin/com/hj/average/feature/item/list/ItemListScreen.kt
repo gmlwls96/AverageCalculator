@@ -7,10 +7,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hj.average.feature.item.list.components.ListHeader
 import com.hj.average.feature.item.list.components.ItemRow
 import com.hj.average.feature.item.list.event.ListEvent
@@ -23,15 +23,14 @@ import kotlinx.collections.immutable.persistentListOf
 @Composable
 fun ItemListScreen(
     modifier: Modifier = Modifier,
+    vm: ItemListViewModel = hiltViewModel(),
 ) {
-    val listUiState by remember {
-        mutableStateOf(ListUiState())
-    }
+    val listUiState by vm.uiState.collectAsStateWithLifecycle()
 
     ItemListContents(
         modifier = modifier,
         listUiState = listUiState,
-        onEvent = {}
+        onEvent = vm::onEvent
     )
 }
 

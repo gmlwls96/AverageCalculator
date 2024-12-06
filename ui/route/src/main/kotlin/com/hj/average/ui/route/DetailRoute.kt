@@ -6,7 +6,7 @@ import hw.dp.route.generated.RouteExtension.Companion.getValueRoute
 
 @Suppress("EmptyClassBlock")
 @RouteAnnotation
-class DetailRoute : Route {
+class DetailRoute(val itemId: Int) : Route {
     companion object {}
 
     override fun buildValuePath(): String = getValueRoute()

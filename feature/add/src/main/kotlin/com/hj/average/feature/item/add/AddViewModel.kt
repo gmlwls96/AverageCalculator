@@ -10,6 +10,7 @@ import com.hj.tw.feature.common.state.StateReducerFlow
 import com.hj.tw.feature.common.state.StateReducerFlowImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hw.dp.core.ui.navigator.api.NavigatorApi
+import java.math.BigDecimal
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 
@@ -76,10 +77,10 @@ class AddViewModel @Inject constructor(
             id = 0,
             date = 0,
             name = state.title,
-            firstPrice = state.firstPrice.toDoubleOrNull() ?: 0.0,
-            firstQuantity = state.firstQuantity.toDoubleOrNull() ?: 0.0,
-            secondPrice = state.secondPrice.toDoubleOrNull() ?: 0.0,
-            secondQuantity = state.secondQuantity.toDoubleOrNull() ?: 0.0,
+            firstPrice = BigDecimal(state.firstPrice.ifEmpty { "0" }),
+            firstQuantity = BigDecimal(state.firstQuantity.ifEmpty { "0" }),
+            secondPrice = BigDecimal(state.secondPrice.ifEmpty { "0" }),
+            secondQuantity = BigDecimal(state.secondQuantity.ifEmpty { "0" }),
         )
         uiState.reduce {
             copy(

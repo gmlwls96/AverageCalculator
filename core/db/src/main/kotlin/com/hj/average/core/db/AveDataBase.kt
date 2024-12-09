@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.hj.average.core.db.converter.BigDecimalTypeConverter
 import com.hj.average.core.db.dao.ItemDao
 import com.hj.average.core.db.entity.ItemEntity
 
@@ -14,7 +16,7 @@ import com.hj.average.core.db.entity.ItemEntity
     version = 1,
     exportSchema = false
 )
-// @TypeConverters()
+@TypeConverters(BigDecimalTypeConverter::class)
 abstract class AveDataBase : RoomDatabase() {
     companion object {
         @Volatile

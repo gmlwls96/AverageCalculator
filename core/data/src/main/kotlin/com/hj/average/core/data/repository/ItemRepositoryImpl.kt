@@ -5,6 +5,7 @@ import com.hj.average.core.data.mapper.toEntity
 import com.hj.average.core.data.mapper.toModel
 import com.hj.average.core.db.entity.ItemEntity
 import com.hj.average.core.models.ItemModel
+import java.math.BigDecimal
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -51,10 +52,10 @@ class ItemRepositoryImpl(
             ItemEntity(
                 name = name,
                 date = System.currentTimeMillis(),
-                firstPrice = firstPrice.toDoubleOrNull() ?: 0.0,
-                firstQuantity = firstQuantity.toDoubleOrNull() ?: 0.0,
-                secondPrice = secondPrice.toDoubleOrNull() ?: 0.0,
-                secondQuantity = secondQuantity.toDoubleOrNull() ?: 0.0
+                firstPrice = BigDecimal(firstPrice),
+                firstQuantity = BigDecimal(firstQuantity),
+                secondPrice = BigDecimal(secondPrice),
+                secondQuantity = BigDecimal(secondQuantity)
             )
         )
     }

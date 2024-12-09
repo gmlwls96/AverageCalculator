@@ -15,9 +15,9 @@ data class ItemVo(
             id = id,
             title = name,
             date = "$date",
-            averagePrice = averagePrice,
-            profit = profit,
-            totalPurchasePrice = totalPurchasePrice
+            averagePrice = averagePrice.toDouble(),
+            profit = profit.toDouble(),
+            totalPurchasePrice = totalPurchasePrice.toDouble()
         )
     }
 }

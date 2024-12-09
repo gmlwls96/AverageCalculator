@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.hj.average.ui.component.core.SpacerHeight
 import com.hj.average.ui.theme.AppTheme
 import com.hj.average.core.res.R
+import com.hj.average.feature.common.string.filterNumericAndDot
 import com.hj.average.ui.theme.AveTheme
 
 @Suppress("LongParameterList", "LongMethod")
@@ -53,7 +54,7 @@ fun LazyListScope.priceInputScreen(
         CustomOutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = firstPrice,
-            onValueChange = onFirstPriceChange,
+            onValueChange = { onFirstPriceChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_first_price_hint,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
@@ -63,7 +64,7 @@ fun LazyListScope.priceInputScreen(
         CustomOutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = firstQuantity,
-            onValueChange = onFirstQuantityChange,
+            onValueChange = { onFirstQuantityChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_first_quantity_hint,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
@@ -81,7 +82,7 @@ fun LazyListScope.priceInputScreen(
         CustomOutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = secondPrice,
-            onValueChange = onSecondPriceChange,
+            onValueChange = { onSecondPriceChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_second_price_hint,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
@@ -92,7 +93,7 @@ fun LazyListScope.priceInputScreen(
         CustomOutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = secondQuantity,
-            onValueChange = onSecondQuantityChange,
+            onValueChange = { onSecondQuantityChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_second_quantity_hint,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )

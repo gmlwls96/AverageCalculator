@@ -5,10 +5,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusManager
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hj.average.feature.common.input.TotalInputInfo
 import com.hj.average.feature.common.input.priceInputScreen
 import com.hj.average.feature.item.add.components.AddHeader
@@ -16,29 +18,31 @@ import com.hj.average.feature.item.add.components.BottomBtn
 import com.hj.average.feature.item.add.event.AddEvent
 import com.hj.average.feature.item.add.state.AddUiState
 import com.hj.average.ui.component.core.SpacerHeight
+import com.hj.average.ui.component.core.addFocusCleaner
 import com.hj.average.ui.theme.AppTheme
 import com.hj.average.ui.theme.AveTheme
 
 @Composable
-internal fun AddScreen() {
-    val uiState by remember {
-        mutableStateOf(AddUiState())
-    }
+internal fun AddScreen(
+    vm: AddViewModel = hiltViewModel()
+) {
+    val uiState by vm.uiState.collectAsStateWithLifecycle()
 
     AddContents(
         uiState = uiState,
-        onEvent = {}
+        onEvent = vm::onEvent
     )
 }
 
 @Composable
 private fun AddContents(
     modifier: Modifier = Modifier,
+    focusManager: FocusManager = LocalFocusManager.current,
     uiState: AddUiState,
     onEvent: (AddEvent) -> Unit
 ) {
     Scaffold(
-        modifier = modifier,
+        modifier = modifier.addFocusCleaner(focusManager),
         topBar = { AddHeader(onBack = { AddEvent.ClickBack }) },
         bottomBar = {
             BottomBtn(
@@ -46,23 +50,23 @@ private fun AddContents(
                 onClick = { onEvent(AddEvent.ClickSave) }
             )
         }
-    ) {
+    ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                .padding(it)
+                .padding(paddingValues)
                 .padding(horizontal = AppTheme.dimensions.padding20)
         ) {
             priceInputScreen(
                 title = uiState.title,
-                onTitleChange = {},
+                onTitleChange = { onEvent(AddEvent.InputTitle(it)) },
                 firstPrice = uiState.firstPrice,
-                onFirstPriceChange = {},
+                onFirstPriceChange = { onEvent(AddEvent.InputFirstPrice(it)) },
                 firstQuantity = uiState.firstQuantity,
-                onFirstQuantityChange = {},
+                onFirstQuantityChange = { onEvent(AddEvent.InputFirstQuantity(it)) },
                 secondPrice = uiState.secondPrice,
-                onSecondPriceChange = {},
+                onSecondPriceChange = { onEvent(AddEvent.InputSecondPrice(it)) },
                 secondQuantity = uiState.secondQuantity,
-                onSecondQuantityChange = {}
+                onSecondQuantityChange = { onEvent(AddEvent.InputSecondQuantity(it)) }
             )
 
             item {

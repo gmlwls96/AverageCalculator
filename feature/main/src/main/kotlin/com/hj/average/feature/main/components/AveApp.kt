@@ -14,7 +14,6 @@ import com.hj.average.feature.item.list.nav.itemListScreen
 import com.hj.average.feature.setting.nav.settingScreen
 import com.hj.average.feature.setting.nav.settingThemeScreen
 import com.hj.average.ui.component.appstate.AveAppState
-import com.hj.average.ui.component.bottombar.BottomNavigationBar
 import com.hj.average.ui.component.bottombar.model.NavigationItem
 import com.hj.average.ui.route.ListRoute
 import hw.dp.route.generated.RouteExtension.Companion.route
@@ -45,9 +44,9 @@ fun AveNavHost(
     val navController = aveAppState.navController
     Scaffold(
         bottomBar = {
-            BottomNavigationBar(
+            MainBottomBar(
                 navController = navController,
-                screenList = bottomList,
+                bottomList = bottomList,
                 onClickBottomTab = {}
             )
         }

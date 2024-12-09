@@ -1,20 +1,32 @@
 package com.hj.average.core.models
 
+import java.math.BigDecimal
+import java.math.RoundingMode
+
 data class ItemModel(
     val id: Int,
     val name: String,
     val date: Long,
-    val firstPrice: Double,
-    val firstQuantity: Double,
-    val secondPrice: Double,
-    val secondQuantity: Double
+    val firstPrice: BigDecimal,
+    val firstQuantity: BigDecimal,
+    val secondPrice: BigDecimal,
+    val secondQuantity: BigDecimal
 ) {
-    val firstValuePrice = firstPrice * firstQuantity
-    val secondValuePrice = secondPrice * secondQuantity
-    val totalPrice = firstValuePrice + secondValuePrice
-    val totalQuantity = firstQuantity + secondQuantity
-    val totalPurchasePrice: Double = firstValuePrice + secondValuePrice
-    val currentPriceValue = secondPrice * totalQuantity
-    val averagePrice: Double = totalPrice / totalQuantity
-    val profit: Double = ((currentPriceValue - totalPrice) / totalPrice) * 100.0
+    val firstValuePrice = firstPrice.multiply(firstQuantity)
+    val secondValuePrice = secondPrice.multiply(secondQuantity)
+    val totalPrice = firstValuePrice.add(secondValuePrice)
+    val totalQuantity = firstQuantity.add(secondQuantity)
+    val totalPurchasePrice: BigDecimal = firstValuePrice.add(secondValuePrice)
+    val currentPriceValue = secondPrice.multiply(totalQuantity)
+    val averagePrice: BigDecimal = try {
+        totalPrice.divide(totalQuantity, 10, RoundingMode.HALF_UP)
+    } catch (e: ArithmeticException) {
+        BigDecimal(0)
+    }
+    val profit: BigDecimal = try {
+        (currentPriceValue.subtract(totalPrice)).divide(totalPrice, 10, RoundingMode.HALF_UP)
+            .multiply(BigDecimal(100.0))
+    } catch (e: ArithmeticException) {
+        BigDecimal(0)
+    }
 }

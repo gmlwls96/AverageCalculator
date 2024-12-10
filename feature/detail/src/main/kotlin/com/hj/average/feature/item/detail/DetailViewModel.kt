@@ -39,7 +39,7 @@ class DetailViewModel @Inject constructor(
 
     private val itemModel: StateFlow<ItemModel?> by lazy {
         itemRepository
-            .getItemOrNull(itemKey.value)
+            .getItem(itemKey.value)
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),

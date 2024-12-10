@@ -5,14 +5,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hj.average.feature.common.input.TotalInputInfo
 import com.hj.average.feature.common.input.priceInputScreen
+import com.hj.average.feature.item.detail.components.BottomBtn
 import com.hj.average.feature.item.detail.components.DetailHeader
 import com.hj.average.feature.item.detail.event.DetailEvent
 import com.hj.average.feature.item.detail.state.DetailUiState
@@ -22,13 +23,14 @@ import com.hj.average.ui.theme.AppTheme
 import com.hj.average.ui.theme.AveTheme
 
 @Composable
-fun DetailScreen() {
-    val uiState by remember {
-        mutableStateOf(DetailUiState())
-    }
+fun DetailScreen(
+    vm: DetailViewModel = hiltViewModel()
+) {
+    val uiState by vm.uiState.collectAsStateWithLifecycle()
+
     DetailContents(
         uiState = uiState,
-        onEvent = {}
+        onEvent = vm::onEvent
     )
 }
 
@@ -44,6 +46,12 @@ internal fun DetailContents(
                 title = uiState.title,
                 onEvent = onEvent
             )
+        },
+        bottomBar = {
+            BottomBtn(
+                isEnable = uiState.isSaveBtnEnable,
+                onClick = { onEvent(DetailEvent.ClickModify) }
+            )
         }
     ) { padding ->
         LazyColumn(
@@ -54,15 +62,15 @@ internal fun DetailContents(
         ) {
             priceInputScreen(
                 title = uiState.title,
-                onTitleChange = {},
+                onTitleChange = { onEvent(DetailEvent.InputTitle(it)) },
                 firstPrice = uiState.firstPrice,
-                onFirstPriceChange = {},
+                onFirstPriceChange = { onEvent(DetailEvent.InputFirstPrice(it)) },
                 firstQuantity = uiState.firstQuantity,
-                onFirstQuantityChange = {},
+                onFirstQuantityChange = { onEvent(DetailEvent.InputFirstQuantity(it)) },
                 secondPrice = uiState.secondPrice,
-                onSecondPriceChange = {},
+                onSecondPriceChange = { onEvent(DetailEvent.InputSecondPrice(it)) },
                 secondQuantity = uiState.secondQuantity,
-                onSecondQuantityChange = {}
+                onSecondQuantityChange = { onEvent(DetailEvent.InputSecondQuantity(it)) }
             )
 
             item {

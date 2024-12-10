@@ -30,12 +30,13 @@ class ItemRepositoryImpl(
             emit(emptyList())
         }
 
-    override fun getItemOrNull(id: Int): Flow<ItemModel?> = itemDao.getItemEntityOrNull(id = id)
-        .map { it?.toModel() }
-        .catch {
-            it.printStackTrace()
-            emit(null)
-        }
+    override fun getItem(id: Int): Flow<ItemModel> =
+        itemDao.getItemEntity(id = id)
+            .map { it.toModel() }
+            .catch {
+                it.printStackTrace()
+                emit(ItemModel.EMPTY)
+            }
 
     override suspend fun updateItem(itemModel: ItemModel) {
         itemDao.update(itemModel.toEntity())

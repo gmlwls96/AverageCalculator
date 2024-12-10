@@ -29,4 +29,16 @@ data class ItemModel(
     } catch (e: ArithmeticException) {
         BigDecimal(0)
     }
+
+    companion object {
+        val EMPTY = ItemModel(
+            id = 0,
+            name = "",
+            date = 0,
+            firstPrice = BigDecimal("0"),
+            firstQuantity = BigDecimal("0"),
+            secondPrice = BigDecimal("0"),
+            secondQuantity = BigDecimal("0")
+        )
+    }
 }

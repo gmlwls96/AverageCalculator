@@ -1,4 +1,4 @@
-package com.hj.average.feature.item.add.components
+package com.hj.average.feature.item.detail.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +27,7 @@ internal fun BottomBtn(
         BasicButton(
             modifier = Modifier
                 .fillMaxWidth(),
-            stringResId = R.string.item_add_save,
+            stringResId = R.string.item_detail_modify,
             isEnable = isEnable,
             bgColor = if (isEnable) {
                 MaterialTheme.colorScheme.onTertiary

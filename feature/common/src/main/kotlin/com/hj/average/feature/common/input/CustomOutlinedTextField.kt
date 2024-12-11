@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.VisualTransformation
 
 @Composable
 fun CustomOutlinedTextField(
@@ -17,7 +18,8 @@ fun CustomOutlinedTextField(
     value: String,
     onValueChange: (String) -> Unit,
     @StringRes hintTextRes: Int,
-    keyboardOptions: KeyboardOptions = KeyboardOptions()
+    keyboardOptions: KeyboardOptions = KeyboardOptions(),
+    visualTransformation: VisualTransformation = VisualTransformation.None
 ) {
     OutlinedTextField(
         modifier = modifier.fillMaxWidth(),
@@ -31,6 +33,7 @@ fun CustomOutlinedTextField(
         placeholder = {
             Text(text = stringResource(id = hintTextRes))
         },
-        keyboardOptions = keyboardOptions
+        keyboardOptions = keyboardOptions,
+        visualTransformation = visualTransformation
     )
 }

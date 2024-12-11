@@ -28,7 +28,7 @@ class ItemListViewModel @Inject constructor(
 
     val uiState: StateReducerFlow<ListUiState> = StateReducerFlowImpl(ListUiState())
 
-    val itemListFlow = itemRepository.getItemList()
+    private val itemListFlow = itemRepository.getItemList()
         .map { list ->
             list.map { it.toVo() }
         }

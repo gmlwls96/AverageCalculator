@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.hj.average.ui.component.core.SpacerHeight
 import com.hj.average.ui.theme.AppTheme
@@ -22,6 +23,7 @@ import com.hj.average.ui.theme.AveTheme
 
 @Suppress("LongParameterList", "LongMethod")
 fun LazyListScope.priceInputScreen(
+    visualTransformation: VisualTransformation = DecimalAmountTransformation(),
     title: String,
     onTitleChange: (String) -> Unit,
     firstPrice: String,
@@ -56,7 +58,8 @@ fun LazyListScope.priceInputScreen(
             value = firstPrice,
             onValueChange = { onFirstPriceChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_first_price_hint,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            visualTransformation = visualTransformation
         )
     }
     item {
@@ -66,7 +69,8 @@ fun LazyListScope.priceInputScreen(
             value = firstQuantity,
             onValueChange = { onFirstQuantityChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_first_quantity_hint,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            visualTransformation = visualTransformation
         )
     }
 
@@ -84,7 +88,8 @@ fun LazyListScope.priceInputScreen(
             value = secondPrice,
             onValueChange = { onSecondPriceChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_second_price_hint,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            visualTransformation = visualTransformation
         )
     }
 
@@ -95,7 +100,8 @@ fun LazyListScope.priceInputScreen(
             value = secondQuantity,
             onValueChange = { onSecondQuantityChange(filterNumericAndDot(it)) },
             hintTextRes = R.string.input_second_quantity_hint,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            visualTransformation = visualTransformation
         )
     }
 }

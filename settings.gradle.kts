@@ -40,6 +40,7 @@ include(
     ":core:network",
     ":core:test",
     ":core:res",
+    ":core:utils",
 
     ":feature:common",
     ":feature:main",

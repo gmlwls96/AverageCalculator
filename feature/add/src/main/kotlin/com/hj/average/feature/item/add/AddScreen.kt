@@ -43,7 +43,7 @@ private fun AddContents(
 ) {
     Scaffold(
         modifier = modifier.addFocusCleaner(focusManager),
-        topBar = { AddHeader(onBack = { AddEvent.ClickBack }) },
+        topBar = { AddHeader(onBack = { onEvent(AddEvent.ClickBack) }) },
         bottomBar = {
             BottomBtn(
                 isEnable = uiState.isSaveBtnEnable,

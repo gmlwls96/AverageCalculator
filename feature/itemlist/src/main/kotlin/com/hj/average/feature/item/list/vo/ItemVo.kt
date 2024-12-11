@@ -1,6 +1,7 @@
 package com.hj.average.feature.item.list.vo
 
 import com.hj.average.core.models.ItemModel
+import com.hj.average.core.utils.DateFormatter
 
 data class ItemVo(
     val id: Int,
@@ -14,7 +15,7 @@ data class ItemVo(
         fun ItemModel.toVo() = ItemVo(
             id = id,
             title = name,
-            date = "$date",
+            date = DateFormatter.convertTimestampToKoreanDate(date),
             averagePrice = averagePrice.toDouble(),
             profit = profit.toDouble(),
             totalPurchasePrice = totalPurchasePrice.toDouble()

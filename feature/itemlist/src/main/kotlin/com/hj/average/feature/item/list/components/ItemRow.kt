@@ -20,12 +20,14 @@ import com.hj.average.core.res.R
 import com.hj.average.ui.component.core.SpacerHeight
 import com.hj.average.ui.theme.AveTheme
 import com.hj.average.ui.theme.Colors
+import java.text.DecimalFormat
 
 @Suppress("LongMethod")
 @Composable
 internal fun ItemRow(
     modifier: Modifier = Modifier,
     itemVo: ItemVo,
+    format: DecimalFormat = DecimalFormat("#,###.00"),
     onClick: () -> Unit
 ) {
     Column(
@@ -43,10 +45,7 @@ internal fun ItemRow(
             Spacer(modifier = Modifier.weight(1f))
 
             Text(
-                text = String.format(
-                    stringResource(id = R.string.double_two_format),
-                    itemVo.averagePrice
-                ),
+                text = format.format(itemVo.averagePrice),
                 style = AppTheme.typography.noto20,
                 color = MaterialTheme.colorScheme.onPrimary
             )
@@ -80,10 +79,7 @@ internal fun ItemRow(
             Spacer(modifier = Modifier.weight(1f))
 
             Text(
-                text = String.format(
-                    stringResource(id = R.string.double_two_format),
-                    itemVo.totalPurchasePrice
-                ),
+                text = format.format(itemVo.totalPurchasePrice),
                 style = AppTheme.typography.noto15,
                 color = MaterialTheme.colorScheme.onPrimary
             )

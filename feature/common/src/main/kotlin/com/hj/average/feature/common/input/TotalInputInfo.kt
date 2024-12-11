@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.hj.average.core.res.R
+import com.hj.average.feature.common.string.percentString
+import com.hj.average.feature.common.string.thousandsCommaString
 import com.hj.average.ui.theme.AppTheme
 import com.hj.average.ui.theme.AveTheme
 
@@ -29,19 +31,19 @@ fun TotalInputInfo(
     Column(modifier = modifier.fillMaxWidth()) {
         TotalRow(
             titleRes = R.string.total_quantity,
-            value = totalQuantity
+            value = thousandsCommaString(totalQuantity)
         )
         TotalRow(
             titleRes = R.string.total_average_price,
-            value = totalAveragePrice
+            value = thousandsCommaString(totalAveragePrice)
         )
         TotalRow(
             titleRes = R.string.total_profit,
-            value = totalProfit
+            value = percentString(totalProfit)
         )
         TotalRow(
             titleRes = R.string.total_buy_price,
-            value = totalPrice
+            value = thousandsCommaString(totalPrice)
         )
     }
 }

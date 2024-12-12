@@ -1,10 +1,13 @@
 package com.hj.average.feature.main.components
 
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.hj.average.ui.component.bottombar.BottomNavigationBar
@@ -22,7 +25,15 @@ fun MainBottomBar(
         BottomNavigationBar(
             navController = navController,
             screenList = bottomList,
-            onClickBottomTab = onClickBottomTab
+            onClickBottomTab = onClickBottomTab,
+            containerColor = MaterialTheme.colorScheme.background,
+            colors = NavigationBarItemDefaults.colors(
+                selectedIconColor = MaterialTheme.colorScheme.onPrimary,
+                unselectedIconColor = MaterialTheme.colorScheme.onSecondary,
+                selectedTextColor = MaterialTheme.colorScheme.onPrimary,
+                unselectedTextColor = MaterialTheme.colorScheme.onSecondary,
+                indicatorColor = Color.Transparent
+            )
         )
     }
 }

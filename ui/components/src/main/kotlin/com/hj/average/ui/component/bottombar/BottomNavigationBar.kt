@@ -25,6 +25,7 @@ import kotlinx.collections.immutable.ImmutableList
 fun BottomNavigationBar(
     navController: NavController,
     screenList: ImmutableList<NavigationItem>,
+    containerColor: Color = Color.White,
     colors: NavigationBarItemColors = NavigationBarItemDefaults.colors(
         selectedIconColor = Colors.Gray1000,
         unselectedIconColor = Colors.Gray600,
@@ -36,7 +37,7 @@ fun BottomNavigationBar(
 ) {
     NavigationBar(
         modifier = Modifier.navigationBarsPadding(),
-        containerColor = Color.White,
+        containerColor = containerColor,
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination

@@ -84,6 +84,7 @@ data class AppDimensions(
     val height50: Dp = 50.dp,
     val height56: Dp = 56.dp,
     val height80: Dp = 80.dp,
+    val height86: Dp = 86.dp,
     val height90: Dp = 90.dp,
     val height106: Dp = 106.dp,
     val height192: Dp = 192.dp,

@@ -51,6 +51,9 @@ kover = "0.7.5"
 coreNavigatorApi = "1.0.1"
 coreNavigatorAnnotation = "1.0.3"
 
+play-services-ads = "23.4.0"
+lottieVersion = "6.6.0"
+
 room = "2.6.1"
 
 [libraries]
@@ -145,6 +148,9 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 
+play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "play-services-ads" }
+
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottieVersion" }
 [bundles]
 
 [plugins]

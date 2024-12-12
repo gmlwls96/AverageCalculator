@@ -7,6 +7,9 @@ plugins {
 
 android{
     namespace = "com.hj.average.ui.component"
+    buildFeatures {
+        buildConfig = true
+    }
 }
 configureCoreAndroidNavigator()
 dependencies {
@@ -15,4 +18,6 @@ dependencies {
     implementation(libs.androidx.compose.navigation)
     implementation(libs.androidx.compose.material)
     implementation(libs.kotlinx.immutable)
+    implementation(libs.play.services.ads)
+    implementation(libs.lottie.compose)
 }

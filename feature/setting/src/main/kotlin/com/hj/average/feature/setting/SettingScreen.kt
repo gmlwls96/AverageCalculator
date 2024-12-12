@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.hj.average.feature.common.admob.AdsBottomBar
 import com.hj.average.feature.setting.components.SettingHeader
 import com.hj.average.feature.setting.components.SettingRow
 import com.hj.average.feature.setting.event.SettingEvent
@@ -39,7 +40,8 @@ internal fun SettingContents(
 ) {
     Scaffold(
         modifier = modifier,
-        topBar = { SettingHeader() }
+        topBar = { SettingHeader() },
+        bottomBar = { AdsBottomBar() }
     ) { padding ->
         LazyColumn(
             modifier = Modifier

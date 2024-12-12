@@ -39,4 +39,7 @@
 
     <string name="item_detail_modify">수정</string>
 
+    <string name="app_id">ca-app-pub-1462230826674640~4350744940</string>
+    <string name="banner_ad_test_id">ca-app-pub-3940256099942544/9214589741</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1462230826674640/1214840946</string>
 </resources>

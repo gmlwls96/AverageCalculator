@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.hj.average.feature.common.admob.AdsBottomBar
 import com.hj.average.feature.item.list.components.ListHeader
 import com.hj.average.feature.item.list.components.ItemRow
 import com.hj.average.feature.item.list.event.ListEvent
@@ -44,7 +45,8 @@ internal fun ItemListContents(
         modifier = modifier,
         topBar = {
             ListHeader { onEvent(ListEvent.ClickAdd) }
-        }
+        },
+        bottomBar = { AdsBottomBar() }
     ) { padding ->
         LazyColumn(
             modifier = Modifier

@@ -13,4 +13,8 @@ interface DataStoreManager {
     suspend fun updateBooleanValue(key: String, value: Boolean)
     suspend fun updateDouble(key: String, value: Double)
     suspend fun clear()
+
+    companion object {
+        const val THEME_TYPE_KEY = "theme_type_key"
+    }
 }

@@ -2,13 +2,12 @@ package com.hj.average.feature.main
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hj.average.core.models.ThemeType
 import com.hj.average.feature.main.components.AveApp
 import com.hj.average.ui.component.appstate.rememberAveAppState
@@ -21,6 +20,7 @@ import kotlinx.collections.immutable.ImmutableList
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    private val viewModel: MainViewModel by viewModels<MainViewModel>()
 
     @Inject
     lateinit var navigatorApi: NavigatorApi
@@ -32,9 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            var currentTheme by remember {
-                mutableStateOf(ThemeType.SYSTEM)
-            }
+            val currentTheme by viewModel.themeType.collectAsStateWithLifecycle(initialValue = ThemeType.SYSTEM)
 
             val aveAppState = rememberAveAppState(
                 navigatorApi = navigatorApi
@@ -45,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                     aveAppState = aveAppState,
                     bottomList = bottomList,
                     currentTheme = currentTheme,
-                    onChangeTheme = { currentTheme = it }
+                    onChangeTheme = viewModel::updateTheme
                 )
             }
         }

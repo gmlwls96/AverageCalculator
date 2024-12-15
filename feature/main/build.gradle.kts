@@ -15,6 +15,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.kotlinx.immutable)
+    implementation(projects.core.datastore)
     implementation(projects.ui.route)
     implementation(projects.feature.itemlist)
     implementation(projects.feature.setting)

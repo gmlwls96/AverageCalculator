@@ -15,6 +15,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import hw.dp.core.ui.navigator.api.NavigatorApi
 import javax.inject.Inject
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
@@ -49,12 +50,17 @@ class ItemListViewModel @Inject constructor(
     fun onEvent(event: ListEvent) {
         when (event) {
             is ListEvent.ClickItem -> clickItem(event.itemVo)
+            is ListEvent.DeleteItem -> deleteItem(event.itemVo)
             is ListEvent.ClickAdd -> clickAdd()
         }
     }
 
     private fun clickItem(itemVo: ItemVo) {
         navigatorApi.navigate(DetailRoute(itemId = itemVo.id))
+    }
+
+    private fun deleteItem(itemVo: ItemVo) = viewModelScope.launch(Dispatchers.IO) {
+        itemRepository.deleteItem(itemVo.id)
     }
 
     private fun clickAdd() {

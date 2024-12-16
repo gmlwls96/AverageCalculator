@@ -14,4 +14,5 @@ interface ItemRepository {
         secondPrice: String,
         secondQuantity: String
     )
+    suspend fun deleteItem(id: Int)
 }

@@ -13,7 +13,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hj.average.feature.common.admob.AdsBottomBar
 import com.hj.average.feature.item.list.components.ListHeader
-import com.hj.average.feature.item.list.components.ItemRow
+import com.hj.average.feature.item.list.components.SwipeToDismissItemRow
 import com.hj.average.feature.item.list.event.ListEvent
 import com.hj.average.feature.item.list.state.ListUiState
 import com.hj.average.feature.item.list.vo.ItemVo
@@ -58,9 +58,10 @@ internal fun ItemListContents(
                 items = listUiState.itemList,
                 key = { it.id }
             ) {
-                ItemRow(
+                SwipeToDismissItemRow(
                     itemVo = it,
-                    onClick = { onEvent(ListEvent.ClickItem(it)) }
+                    onClick = { onEvent(ListEvent.ClickItem(it)) },
+                    onDelete = { onEvent(ListEvent.DeleteItem(it)) }
                 )
             }
         }

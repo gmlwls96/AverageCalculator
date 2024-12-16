@@ -60,4 +60,8 @@ class ItemRepositoryImpl(
             )
         )
     }
+
+    override suspend fun deleteItem(id: Int) {
+        itemDao.deleteItem(id)
+    }
 }

@@ -23,6 +23,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Set up Token
+        run: |
+          echo "github_username=${{ secrets.USER_NAME }}" >> $GITHUB_ENV
+          echo "github_access_token=${{ secrets.CORE_ACCESS_TOKEN }}" >> $GITHUB_ENV
+
       - name: Android Staging Build
         run: ./gradlew :app:assembleStaging
 

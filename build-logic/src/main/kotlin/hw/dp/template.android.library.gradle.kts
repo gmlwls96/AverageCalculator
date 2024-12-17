@@ -14,6 +14,12 @@ android {
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    buildTypes {
+        create("staging") {
+            initWith(getByName("debug"))
+        }
+    }
 }
 
 configureKotlinAndroid()

@@ -1,6 +1,8 @@
 plugins {
     id("template.android.application")
     id("template.kover")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -55,4 +57,7 @@ dependencies {
     implementation(projects.core.domain)
     implementation(projects.core.res)
     implementation(projects.feature.main)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
 }

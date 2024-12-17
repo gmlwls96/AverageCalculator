@@ -29,7 +29,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AverageCalculator"
+rootProject.name = "EasyAverage"
 include(
     ":app",
     ":core:data",

@@ -36,7 +36,7 @@ jobs:
         with:
           appId: ${{secrets.FIREBASE_APP_ID_STG}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-          groups: wp_test
+          groups: test
           releaseNotes: 'v0.1.0(${{ github.run_number }})'
           file: app/build/outputs/apk/staging/app-staging.apk
 

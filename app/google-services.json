@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "940354868818",
+    "project_id": "averagepricecalculator",
+    "storage_bucket": "averagepricecalculator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940354868818:android:54c2c61d3f71417ba6b18b",
+        "android_client_info": {
+          "package_name": "com.hj.average"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABmToE2QwzkQyRRqQBsWCfF3k1DNDx0E8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

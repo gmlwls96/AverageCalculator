@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="bottom_menu_list">리스트</string>
+    <string name="bottom_menu_setting">설정</string>
+
     <string name="confirm" translatable="false">확인</string>
+    <string name="double_two_format">%.2f</string>
+    <string name="double_percent_format">%.2f %%</string>
+    <string name="total_purchase_price">총 매수 가격</string>
+    <string name="list_screen_title">평단가 계산기</string>
+
+    <string name="setting_screen_title">설정</string>
+    <string name="setting_theme">테마</string>
+    <string name="setting_bug">버그 신고 및 개선 요청</string>
+
+    <string name="setting_theme_title">테마 설정</string>
+    <string name="setting_theme_current">현재 테마 : %s</string>
+    <string name="setting_theme_dark">다크</string>
+    <string name="setting_theme_light">라이트</string>
+    <string name="setting_theme_system">시스템</string>
+
+    <string name="first_buy">첫 번째 구매</string>
+    <string name="second_buy">두 번째 구매</string>
+    <string name="input_name_hint">이름</string>
+    <string name="input_first_price_hint">보유 매수 가격</string>
+    <string name="input_first_quantity_hint">보유 수량</string>
+    <string name="input_second_price_hint">추가 매수 가격</string>
+    <string name="input_second_quantity_hint">추가 매수 수량</string>
+    <string name="total_quantity">총 수량</string>
+    <string name="total_profit">수익률</string>
+    <string name="total_buy_price">총 매수 가격</string>
+    <string name="total_average_price">평단가</string>
+
+    <string name="detail_screen_back_text">평단가 계산기</string>
+    <string name="detail_screen_add">추가 매수</string>
+
+    <string name="item_add_title">아이템 추가 화면</string>
+    <string name="item_add_save">저장</string>
+
+    <string name="item_detail_modify">수정</string>
+
+    <string name="app_id">ca-app-pub-1462230826674640~4350744940</string>
+    <string name="banner_ad_test_id">ca-app-pub-3940256099942544/9214589741</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1462230826674640/1214840946</string>
 </resources>

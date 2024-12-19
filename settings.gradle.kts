@@ -29,21 +29,28 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AverageCalculator"
+rootProject.name = "EasyAverage"
 include(
     ":app",
     ":core:data",
     ":core:datastore",
+    ":core:db",
     ":core:domain",
     ":core:models",
     ":core:network",
     ":core:test",
     ":core:res",
+    ":core:utils",
 
     ":feature:common",
     ":feature:main",
+    ":feature:itemlist",
+    ":feature:setting",
+    ":feature:detail",
+    ":feature:add",
 
     ":ui:components",
+    ":ui:route",
     ":ui:theme",
 )
  

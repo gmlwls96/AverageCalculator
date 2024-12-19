@@ -1,6 +1,8 @@
 plugins {
     id("template.android.application")
     id("template.kover")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -39,7 +41,11 @@ android {
         getByName("debug") {
             isDebuggable = true
         }
-
+        create("staging") {
+            initWith(getByName("debug"))
+            applicationIdSuffix = ".staging"
+            resValue("string", "app_name", "EasyAverageStaging")
+        }
         getByName("release") {
             isMinifyEnabled = true
             proguardFiles(
@@ -55,4 +61,7 @@ dependencies {
     implementation(projects.core.domain)
     implementation(projects.core.res)
     implementation(projects.feature.main)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.crashlytics)
 }

@@ -1,6 +1,7 @@
 package com.hj.average.ui.component.buttons
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -25,6 +26,7 @@ fun BasicButton(
     textStyle: TextStyle = AppTheme.typography.bottomBt,
     bgColor: Color = Colors.Gray900,
     textColor: Color = Colors.White,
+    border: BorderStroke? = null,
     isEnable: Boolean = true,
     shape: Shape = RectangleShape,
     onClick: () -> Unit,
@@ -46,6 +48,7 @@ fun BasicButton(
             disabledContainerColor = Colors.Gray400
         ),
         onClick = onClick,
+        border = border,
         interactionSource = interactionSource
     ) {
         Text(

@@ -1,5 +1,7 @@
 package com.hj.average.feature.setting
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -86,20 +88,30 @@ private fun ThemeRoundBtn(
     onClick: () -> Unit
 ) {
     val currentThemeStringRes = currentTheme.themeTypeToStringRes()
+    val isSelect = currentThemeStringRes == stringResId
     RoundButton(
         modifier = modifier,
         stringResId = stringResId,
+        drawableRes = stringResId.stringResToDrawableRes(),
         onClick = onClick,
-        textColor = if (currentThemeStringRes == stringResId) {
+        textColor = if (isSelect) {
             Colors.White
         } else {
             Colors.Gray1000
         },
-        bgColor = if (currentThemeStringRes == stringResId) {
+        bgColor = if (isSelect) {
             Colors.Gray600
         } else {
             Colors.White
         },
+        border = BorderStroke(
+            width = AppTheme.dimensions.width1,
+            color = if (isSelect) {
+                Colors.FintaBlue
+            } else {
+                Colors.Gray900
+            }
+        )
     )
 }
 
@@ -108,6 +120,13 @@ private fun ThemeType.themeTypeToStringRes() =
         ThemeType.DARK -> R.string.setting_theme_dark
         ThemeType.LIGHT -> R.string.setting_theme_light
         else -> R.string.setting_theme_system
+    }
+
+private fun Int.stringResToDrawableRes() =
+    when (this) {
+        R.string.setting_theme_dark -> R.drawable.ic_dark
+        R.string.setting_theme_light -> R.drawable.ic_light
+        else -> R.drawable.ic_system
     }
 
 @Preview

@@ -1,5 +1,6 @@
 package com.hj.average.ui.component.buttons
 
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,6 +16,7 @@ import com.hj.average.core.res.R
 fun RoundButton(
     modifier: Modifier = Modifier,
     @StringRes stringResId: Int = R.string.confirm,
+    @DrawableRes drawableRes: Int? = null,
     bgColor: Color = Colors.Gray900,
     textColor: Color = Colors.White,
     shape: Shape = RoundedCornerShape(AppTheme.dimensions.radius8),
@@ -25,6 +27,7 @@ fun RoundButton(
     BasicButton(
         modifier = modifier,
         stringResId = stringResId,
+        drawableRes = drawableRes,
         bgColor = bgColor,
         shape = shape,
         border = border,

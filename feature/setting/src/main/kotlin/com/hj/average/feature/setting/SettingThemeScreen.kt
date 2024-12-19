@@ -92,6 +92,7 @@ private fun ThemeRoundBtn(
     RoundButton(
         modifier = modifier,
         stringResId = stringResId,
+        drawableRes = stringResId.stringResToDrawableRes(),
         onClick = onClick,
         textColor = if (isSelect) {
             Colors.White
@@ -119,6 +120,13 @@ private fun ThemeType.themeTypeToStringRes() =
         ThemeType.DARK -> R.string.setting_theme_dark
         ThemeType.LIGHT -> R.string.setting_theme_light
         else -> R.string.setting_theme_system
+    }
+
+private fun Int.stringResToDrawableRes() =
+    when (this) {
+        R.string.setting_theme_dark -> R.drawable.ic_dark
+        R.string.setting_theme_light -> R.drawable.ic_light
+        else -> R.drawable.ic_system
     }
 
 @Preview

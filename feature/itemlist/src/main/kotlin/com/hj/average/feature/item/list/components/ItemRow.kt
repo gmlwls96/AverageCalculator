@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.hj.average.feature.item.list.vo.ItemVo
 import com.hj.average.ui.theme.AppTheme
 import com.hj.average.core.res.R
+import com.hj.average.feature.common.string.percentString
 import com.hj.average.ui.component.core.SpacerHeight
 import com.hj.average.ui.theme.AveTheme
 import com.hj.average.ui.theme.Colors
@@ -116,10 +117,7 @@ internal fun ItemRow(
             Spacer(modifier = Modifier.weight(1f))
 
             Text(
-                text = String.format(
-                    stringResource(id = R.string.double_percent_format),
-                    itemVo.profit
-                ),
+                text = percentString(itemVo.profit.toString()),
                 style = AppTheme.typography.noto13,
                 color = if (itemVo.profit > 0) {
                     Colors.RED200

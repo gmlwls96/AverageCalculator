@@ -21,7 +21,7 @@ val thousandsCommaString: (String) -> String = {
 @Suppress("TooGenericExceptionCaught")
 val percentString: (String) -> String = {
     try {
-        DecimalFormat("#,###.###").format(it.toDouble()) + "%"
+        DecimalFormat("#,###.##").format(it.toDouble()) + "%"
     } catch (e: Exception) {
         it
     }

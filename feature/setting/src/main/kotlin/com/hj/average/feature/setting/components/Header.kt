@@ -1,5 +1,6 @@
 package com.hj.average.feature.setting.components
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -44,6 +45,31 @@ fun SettingThemeHeader(
     modifier: Modifier = Modifier,
     onBack: () -> Unit,
 ) {
+    BackSettingHeader(
+        modifier = modifier,
+        titleRes = R.string.setting_screen_title,
+        onBack = onBack
+    )
+}
+
+@Composable
+fun BugReportHeader(
+    modifier: Modifier = Modifier,
+    onBack: () -> Unit,
+) {
+    BackSettingHeader(
+        modifier = modifier,
+        titleRes = R.string.setting_bug,
+        onBack = onBack
+    )
+}
+
+@Composable
+private fun BackSettingHeader(
+    modifier: Modifier = Modifier,
+    @StringRes titleRes: Int,
+    onBack: () -> Unit,
+) {
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -71,7 +97,7 @@ fun SettingThemeHeader(
         Spacer(modifier = Modifier.weight(1f))
         Text(
             modifier = Modifier.padding(horizontal = AppTheme.dimensions.padding20),
-            text = stringResource(id = R.string.setting_theme_title),
+            text = stringResource(titleRes),
             style = AppTheme.typography.noto32,
             color = MaterialTheme.colorScheme.onPrimary
         )
@@ -91,6 +117,16 @@ private fun SettingHeaderPreview() {
 private fun SettingThemeHeaderPreview() {
     AveTheme(isDarkTheme = false) {
         SettingThemeHeader(
+            onBack = {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun BugReportHeaderPreview() {
+    AveTheme(isDarkTheme = false) {
+        BugReportHeader(
             onBack = {}
         )
     }

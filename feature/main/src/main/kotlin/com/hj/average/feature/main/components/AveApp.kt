@@ -11,6 +11,7 @@ import com.hj.average.core.models.ThemeType
 import com.hj.average.feature.item.add.nav.addScreen
 import com.hj.average.feature.item.detail.nav.detailScreen
 import com.hj.average.feature.item.list.nav.itemListScreen
+import com.hj.average.feature.setting.nav.bugReportScreen
 import com.hj.average.feature.setting.nav.settingScreen
 import com.hj.average.feature.setting.nav.settingThemeScreen
 import com.hj.average.ui.component.appstate.AveAppState
@@ -73,6 +74,10 @@ fun AveNavHost(
                 detailScreen()
 
                 addScreen()
+
+                bugReportScreen(
+                    onBack = { aveAppState.navigatorApi.popBackStack() }
+                )
             }
         }
     }

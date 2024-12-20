@@ -12,6 +12,7 @@
     <string name="setting_screen_title">설정</string>
     <string name="setting_theme">테마</string>
     <string name="setting_bug">버그 신고 및 개선 요청</string>
+    <string name="setting_bug_report_content">현재 기기에서 이메일 기능을 사용할 수 없습니다.\n이메일 설정을 확인한 후 다시 시도해주세요.</string>
 
     <string name="setting_theme_title">테마 설정</string>
     <string name="setting_theme_current">현재 테마 : %s</string>

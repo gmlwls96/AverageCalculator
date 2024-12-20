@@ -7,6 +7,7 @@ import com.hj.tw.feature.common.state.StateReducerFlow
 import com.hj.tw.feature.common.state.StateReducerFlowImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import com.hj.average.core.res.R
+import com.hj.average.ui.route.BugReportRoute
 import com.hj.average.ui.route.SettingThemeRoute
 import hw.dp.core.ui.navigator.api.NavigatorApi
 import javax.inject.Inject
@@ -27,6 +28,10 @@ class SettingViewModel @Inject constructor(
         when (res) {
             R.string.setting_theme -> {
                 navigatorApi.navigate(SettingThemeRoute())
+            }
+
+            R.string.setting_bug -> {
+                navigatorApi.navigate(BugReportRoute())
             }
 
             else -> {}

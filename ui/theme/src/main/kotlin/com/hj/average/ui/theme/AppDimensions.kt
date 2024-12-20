@@ -102,6 +102,7 @@ data class AppDimensions(
     val width68: Dp = 68.dp,
     val width88: Dp = 88.dp,
     val width96: Dp = 96.dp,
+    val width105: Dp = 105.dp,
     val width120: Dp = 120.dp,
     val width196: Dp = 196.dp,
     val width220: Dp = 220.dp,

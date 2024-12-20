@@ -12,6 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hj.average.feature.common.admob.AdsBottomBar
+import com.hj.average.feature.item.list.components.EmptyScreen
 import com.hj.average.feature.item.list.components.ListHeader
 import com.hj.average.feature.item.list.components.SwipeToDismissItemRow
 import com.hj.average.feature.item.list.event.ListEvent
@@ -54,6 +55,11 @@ internal fun ItemListContents(
                 .padding(padding)
                 .padding(horizontal = AppTheme.dimensions.padding20)
         ) {
+            if (listUiState.itemList.isEmpty()) {
+                item {
+                    EmptyScreen()
+                }
+            }
             items(
                 items = listUiState.itemList,
                 key = { it.id }

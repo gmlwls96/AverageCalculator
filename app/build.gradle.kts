@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.hj.average"
-        versionCode = 1
+        versionCode = 2
         versionName = "1.0"
         targetSdk = 34
     }

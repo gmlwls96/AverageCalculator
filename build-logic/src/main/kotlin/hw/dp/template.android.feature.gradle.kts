@@ -25,11 +25,13 @@ configureHiltAndroid()
 configureCoreAndroidNavigator()
 
 dependencies {
+    implementation(project(":core:data"))
     implementation(project(":core:domain"))
     implementation(project(":core:models"))
     implementation(project(":core:res"))
     implementation(project(":ui:components"))
     implementation(project(":ui:theme"))
+    implementation(project(":ui:route"))
     val libs = project.extensions.libs
 
     implementation(libs.findLibrary("androidx.appcompat").get())

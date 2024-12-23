@@ -3,7 +3,7 @@ package hw.dp.template
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-internal fun Project.configureCoreAndroidNavigator() {
+fun Project.configureCoreAndroidNavigator() {
     with(pluginManager) {
         apply("com.google.devtools.ksp")
     }

@@ -8,6 +8,7 @@ androidxActivity = "1.8.2"
 androidxFragment = "1.6.2"
 secretGradlePlugin = "2.0.1"
 protobufPlugin = "0.9.4"
+googleService = "4.4.2"
 
 androidxComposeBom = "2024.02.02"
 androidxComposeCompiler = "1.5.10"
@@ -50,6 +51,13 @@ kover = "0.7.5"
 
 coreNavigatorApi = "1.0.1"
 coreNavigatorAnnotation = "1.0.3"
+
+play-services-ads = "23.4.0"
+firebaseBomVersion = "33.7.0"
+firebaseCrashlytics = "3.0.2"
+lottieVersion = "6.6.0"
+
+room = "2.6.1"
 
 [libraries]
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
@@ -99,7 +107,7 @@ protobuf-java-lite = { group = "com.google.protobuf", name = "protobuf-javalite"
 # retrofit
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-gson-converter = { group = "com.squareup.retrofit2", name ="converter-gson", version.ref = "retrofit" }
+gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
@@ -135,10 +143,22 @@ lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-view
 core-ktx = { group = "androidx.test", name = "core-ktx", version = "1.5.0" }
 
 # Core-Android
-core-android-navigator-api = {group = "hw.dp.core", name = "navigator-api", version.ref="coreNavigatorApi"}
-core-android-navigator-annotation = {group = "hw.dp.core", name = "navigator-annotation", version.ref="coreNavigatorAnnotation"}
+core-android-navigator-api = { group = "hw.dp.core", name = "navigator-api", version.ref = "coreNavigatorApi" }
+core-android-navigator-annotation = { group = "hw.dp.core", name = "navigator-annotation", version.ref = "coreNavigatorAnnotation" }
 
+# room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
+play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "play-services-ads" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBomVersion" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-crashlytics = {module = "com.google.firebase:firebase-crashlytics"}
+
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottieVersion" }
 [bundles]
+firebase = ["firebase-bom", "firebase-analytics", "firebase-crashlytics"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -152,3 +172,5 @@ kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 verify-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+google-service = { id = "com.google.gms.google-services", version.ref = "googleService" }
+firebase-crashlytics = {id = "com.google.firebase.crashlytics", version.ref="firebaseCrashlytics"}

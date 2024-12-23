@@ -18,5 +18,7 @@ plugins {
     alias(libs.plugins.kover) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.protobuf) apply false
+    alias(libs.plugins.google.service) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
 }
 

@@ -3,6 +3,7 @@ package com.hj.average.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
@@ -14,23 +15,31 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
-import com.hj.average.ui.theme.Colors.Pink40
-import com.hj.average.ui.theme.Colors.Pink80
-import com.hj.average.ui.theme.Colors.Primary
-import com.hj.average.ui.theme.Colors.Purple40
+import com.hj.average.ui.theme.Colors.Gray100
+import com.hj.average.ui.theme.Colors.Gray900
 import com.hj.average.ui.theme.Colors.PurpleGrey40
 import com.hj.average.ui.theme.Colors.PurpleGrey80
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Primary,
+    primary = Gray900,
+    onPrimary = Gray100, // text
     secondary = PurpleGrey80,
-    tertiary = Pink80
+    onSecondary = Colors.Gray600,
+    background = Gray900,
+    onTertiary = Colors.Blue100,
+    onSurface = Colors.White,
+    surfaceBright = Colors.White_45
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
+    primary = Gray100,
+    onPrimary = Colors.Gray1000,
     secondary = PurpleGrey40,
-    tertiary = Pink40
+    onSecondary = Colors.Gray600,
+    background = Gray100,
+    onTertiary = Colors.Blue100,
+    onSurface = Colors.Black,
+    surfaceBright = Colors.Black_45
 )
 
 @Composable
@@ -46,6 +55,7 @@ fun PbTheme(
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
+
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
@@ -63,4 +73,19 @@ fun PbTheme(
     ) {
         content()
     }
+}
+
+@Composable
+fun AveTheme(
+    isDarkTheme: Boolean,
+    content: @Composable () -> Unit
+) {
+    MaterialTheme(
+        colorScheme = if (isDarkTheme) {
+            DarkColorScheme
+        } else {
+            LightColorScheme
+        },
+        content = content
+    )
 }

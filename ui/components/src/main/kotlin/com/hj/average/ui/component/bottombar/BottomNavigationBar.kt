@@ -19,11 +19,13 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.hj.average.ui.component.bottombar.model.NavigationItem
 import com.hj.average.ui.theme.Colors
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun BottomNavigationBar(
     navController: NavController,
-    screenList: List<NavigationItem>,
+    screenList: ImmutableList<NavigationItem>,
+    containerColor: Color = Color.White,
     colors: NavigationBarItemColors = NavigationBarItemDefaults.colors(
         selectedIconColor = Colors.Gray1000,
         unselectedIconColor = Colors.Gray600,
@@ -35,7 +37,7 @@ fun BottomNavigationBar(
 ) {
     NavigationBar(
         modifier = Modifier.navigationBarsPadding(),
-        containerColor = Color.White,
+        containerColor = containerColor,
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
